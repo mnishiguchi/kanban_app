@@ -15,3 +15,12 @@ $ netstat -na | grep 8080
 
 ### [loaders](http://webpack.github.io/docs/using-loaders.html)
 - [list of loaders](http://webpack.github.io/docs/list-of-loaders.html)
+
+### [Enabling sourcemaps](http://survivejs.com/webpack_react/developing_with_webpack/#enabling-sourcemaps)
+- [docs](https://webpack.github.io/docs/configuration.html#devtool)
+- Check if sourcemaps is enabled in your browser. [[chrome](https://developer.chrome.com/devtools/docs/javascript-debugging)]
+
+### [npm-install-webpack-plugin](https://www.npmjs.com/package/npm-install-webpack-plugin)
+- Webpack loader to automatically `npm install --save` dependencies.
+- It will detect changes made to Webpack configuration and the projects files and install the dependencies for us.
+- It will modify `package.json` automatically as well.
