@@ -1,8 +1,7 @@
-const path  = require('path');
-const merge = require('webpack-merge');
+const path    = require('path');
+const merge   = require('webpack-merge');
 const webpack = require('webpack');
-
-const TARGET = process.env.npm_lifecycle_event;
+const TARGET  = process.env.npm_lifecycle_event;
 
 // Given plenty of places expect absolute paths, we can avoid confusion by
 // using absolute paths everywhere.
@@ -20,6 +19,20 @@ const common = {
   output: {
     path:      PATHS.build,
     filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        // `test` expects a RegEx.
+        test:    /\.css$/,
+        // The loaders are evaluated from right to left.
+        // `css-loader`:   resolves @import and url statements in our CSS files.
+        // `style-loader`: resolves require statements in our JavaScript.
+        loaders: ['style', 'css'],
+        // `include` accepts either a path or an array of paths.
+        include: PATHS.app
+      }
+    ]
   }
 };
 
